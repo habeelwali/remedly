@@ -14,6 +14,7 @@ const ProductCard = ({ data }) => {
                     <TopSellingItem item={item} />
                 )}
                 horizontal
+                showsHorizontalScrollIndicator={false}
             />
 
         </View>

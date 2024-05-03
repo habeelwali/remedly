@@ -23,16 +23,16 @@ const zoomOut = {
 }
 const TrendingItem = ({ activeItem, item }) => {
 
-    const [play, setplay] = useState(false);
+    console.log("item", item);
     return (
         <Animatable.View
             className="mr-5"
             animation={activeItem === item.id ? zoomIn : zoomOut}
             duration={500}
         >
-            <TouchableOpacity onPress={() => { router.push(`/Categories/${item.categoryName}`) }}>
+            <TouchableOpacity onPress={() => { router.push(`/Categories/${item.categorySEName}`) }}>
                 <View>
-                    <Image source={{ url: item?.imageURL }} className="w-52 h-52 rounded-md my-5 overflow-hidden shadow-lg shadow-black/40 relative"
+                    <Image source={{ url: item?.imageURL }} className="w-52 h-52 rounded-md my-5 overflow-hidden shadow-sm shadow-black/40 relative"
                         resizeMode="contain" />
                     <Text className="text-black absolute  bottom-[50px] left-[55px] w-[100px] items-center text-center ">{item.categoryName}</Text>
                 </View>
@@ -63,6 +63,7 @@ export default function Categories({ posts }) {
             }
             contentOffset={{ x: 170 }}
             horizontal
+            showsHorizontalScrollIndicator={false}
         />
     )
 }

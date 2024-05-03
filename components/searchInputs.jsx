@@ -7,9 +7,9 @@ const SearchInput = ({initialQuery}) => {
   const [query, setQuery] = useState(initialQuery || '');
  
   return (
-    <View className="border-2 border-black-200 w-full h-16 px-4 bg-black-100 rounded-md focus:border-secondary flex-row items-center space-x-4">
+    <View className="border-2 border-black-200 rounded-2xl w-full h-16 px-0 bg-whiterounded-md focus:border-secondary flex-row items-center space-x-4">
       <TextInput
-        className="flex-1 text-white mt-0.5  font-pregular text-base"
+        className="flex-1 text-white  p-5  font-pregular text-base"
         value={query}
         placeholder="search for more video"
         placeholderTextColor="#CDCDE0"
@@ -26,11 +26,14 @@ const SearchInput = ({initialQuery}) => {
           else router.push(`/search/${query}`)
 
         }}>
+          <View className="bg-black w-full p-5  h-full items-center  justify-center rounded-br-xl rounded-tr-xl">
           <Image
             source={icons.search}
-            className="w-6 h-6"
+            className="w-6 h-6  "
             resizeMode="contain"
           />
+          </View>
+         
         </TouchableOpacity>
     
     </View>
