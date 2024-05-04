@@ -23,7 +23,6 @@ const zoomOut = {
 }
 const TrendingItem = ({ activeItem, item }) => {
 
-    console.log("item", item);
     return (
         <Animatable.View
             className="mr-5"

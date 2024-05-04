@@ -13,11 +13,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "../constants";
 import SearchInput from "../components/searchInputs";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import GlobalProvider from "../context/GlobalProvider";
 const RootLayout = () => {
   const queryClient = new QueryClient();
   const nevigation = useNavigation();
   return (
     <QueryClientProvider client={queryClient}>
+         <GlobalProvider>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
@@ -34,7 +36,7 @@ const RootLayout = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="(model)/filter"
+          name="filter/[filter]"
           options={{
             presentation: "modal",
             headerTitle: "Filter",
@@ -47,6 +49,7 @@ const RootLayout = () => {
           }}
         />
       </Stack>
+      </GlobalProvider>
     </QueryClientProvider>
   );
 };
