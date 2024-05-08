@@ -25,13 +25,13 @@ const TrendingItem = ({ activeItem, item }) => {
 
     return (
         <Animatable.View
-            className="mr-5"
+            className="mr-1 p-2"
             animation={activeItem === item.id ? zoomIn : zoomOut}
             duration={500}
         >
             <TouchableOpacity onPress={() => { router.push(`/Categories/${item.categorySEName}`) }}>
-                <View>
-                    <Image source={{ url: item?.imageURL }} className="w-52 h-52 rounded-md my-5 overflow-hidden shadow-sm shadow-black/40 relative"
+                <View className="w-[100%]">
+                    <Image source={{ uri: item?.imageURL }} className="w-52 h-52 rounded-md my-5 overflow-hidden shadow-sm shadow-black/40 relative"
                         resizeMode="contain" />
                     <Text className="text-black absolute  bottom-[50px] left-[55px] w-[100px] items-center text-center ">{item.categoryName}</Text>
                 </View>

@@ -10,7 +10,8 @@ const GlobalProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [productdata, setProductData] = useState([]);
-  const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState([]);
+  const [brands, setBrands] = useState([])
 
 //   useEffect(() => {
 //     getCurrentUser()
@@ -45,7 +46,9 @@ console.log("productdata>>>>");
         setProductData,
         productdata,
         setCategories,
-        categories
+        categories,
+        brands, 
+        setBrands
       }}
     >
       {children}
